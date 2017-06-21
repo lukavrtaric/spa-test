@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SPA Chapter 1 section</title>
+	<link rel="stylesheet" type="text/css" href="/public/css/style.css">
+	<script type="text/javascript" src="/public/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="/public/js/main.js"></script>
+</head>
+<body>
+
+	<div id="spa">
+		<div class="spa-slider"></div>
+	</div>
+
+</body>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		spa.initModule($('#spa'));
+
+		var prison = {
+			names: 'Mike Mikowski and Josh Powell',
+			who: function() {
+				var that = this;
+				$.ajax({
+					success: function() {
+						console.log(that.names);
+					}
+				});
+			}
+		};
+
+		prison.who();
+
+	});
+</script>
+</html>
