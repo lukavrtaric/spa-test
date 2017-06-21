@@ -6,7 +6,7 @@
 
  /* serves main page */
  app.get("/", function(req, res) {
-    res.sendfile('spa.html')
+    res.sendFile(__dirname + '/spa.html')
  });
 
  var port = process.env.PORT || 8080;
