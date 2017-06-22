@@ -2,7 +2,8 @@ var gulp        = require('gulp'),
     less        = require("gulp-less"),
     minifyCss   = require("gulp-minify-css"),
     uglify      = require("gulp-uglify"),
-    rename      = require('gulp-rename');
+    rename      = require('gulp-rename'),
+    watch       = require('gulp-watch');
 
 // LESS compile
 gulp.task('compile-less', function () {
@@ -24,3 +25,15 @@ gulp.task('compile-js', function () {
     }))
     .pipe(gulp.dest('public/js'));
 });
+
+// Watch LESS and compile on change
+gulp.task('watchLess', function() {
+    gulp.watch('less/*.less', ['compile-less']);
+});
+
+// Watch LESS and compile on change
+gulp.task('watchJS', function() {
+    gulp.watch('js-dev/*.js', ['compile-js']);
+});
+
+gulp.task('default', ['watchLess', 'watchJS']);
