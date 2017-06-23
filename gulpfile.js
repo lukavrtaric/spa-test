@@ -27,13 +27,13 @@ gulp.task('compile-js', function () {
 });
 
 // Watch LESS and compile on change
-gulp.task('watchLess', function() {
+gulp.task('watchLESS', function() {
     gulp.watch('less/*.less', ['compile-less']);
 });
 
-// Watch LESS and compile on change
+// Watch JS and compile on change
 gulp.task('watchJS', function() {
     gulp.watch('js-dev/*.js', ['compile-js']);
 });
 
-gulp.task('default', ['watchLess', 'watchJS']);
+gulp.task('default', ['watchLESS', 'watchJS']);
